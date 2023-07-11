@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Aside.css";
+import TotalProducts from "../../ProductsArea/TotalProducts/TotalProducts";
 
 function Aside(): JSX.Element {
     return (
@@ -12,6 +13,9 @@ function Aside(): JSX.Element {
             <NavLink to="/products">Products</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/employees">Employees</NavLink>
+
+
+            <TotalProducts />
 
             
         </div>

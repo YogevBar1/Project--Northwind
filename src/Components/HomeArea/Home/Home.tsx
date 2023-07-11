@@ -2,9 +2,11 @@ import "./Home.css";
 import productSource1 from "../../../Assets/Images/products1.jpeg"
 import productSource2 from "../../../Assets/Images/products2.jpeg"
 import { useEffect, useState } from "react";
+import useTitle from "../../../Utils/UseTitle";
 
 function Home(): JSX.Element {
 
+    useTitle("NorthWind | Home");
 
 
     const arrSale2 = useState<string>("");
@@ -18,6 +20,7 @@ function Home(): JSX.Element {
 
 
     function displaySale1(): void {
+        
         alert("Sale: 50% discount on all candies!");
 
     }

@@ -1,7 +1,7 @@
 import Aside from "../Aside/Aside";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Routing from "../Routing/Routing";
+import Routing from "../../Routing/Routing";
 import "./Layout.css";
 
 function Layout(): JSX.Element {

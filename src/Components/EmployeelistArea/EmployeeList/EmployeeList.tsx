@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import "./EmployeeList.css";
 import EmployeesModel from "../../../Models/EmployeeModel";
 import employeesListService from "../../../Services/EmployeesListService";
+import useTitle from "../../../Utils/UseTitle";
+import notifyService from "../../../Services/NotifyService";
 
 
 
 
 
 function EmployeeList(): JSX.Element {
+
+    useTitle("NorthWind | Employees");
+
 
     const [frontendEmployees, setFrontedList] = useState<EmployeesModel[]>([]);
 
@@ -19,7 +24,7 @@ function EmployeeList(): JSX.Element {
         // Get Employees
         employeesListService.getAllEmployees()
             .then(backendEmployees => setFrontedList(backendEmployees))
-            .catch(err => alert(err.message));
+            .catch(err => notifyService.error(err));
 
 
     }, []);

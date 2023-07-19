@@ -3,6 +3,7 @@ import productSource1 from "../../../Assets/Images/products1.jpeg"
 import productSource2 from "../../../Assets/Images/products2.jpeg"
 import { useEffect, useState } from "react";
 import useTitle from "../../../Utils/UseTitle";
+import Clock from "../Clock/Clock";
 
 function Home(): JSX.Element {
 
@@ -58,6 +59,16 @@ function Home(): JSX.Element {
         { id: 4, name: "Cheese Cake", price: 23 }
     ];
 
+    function showAverage(): void{
+        const numbers = [11,22,33,44,55];
+        let sum =0;
+        for(let i =0; i< numbers.length -1; i++){
+            sum += numbers[i];
+        }
+        const avg = sum / numbers.length;
+        alert("Average: " + avg);
+    }
+
 
     return (
         <div className="Home">
@@ -93,6 +104,11 @@ function Home(): JSX.Element {
             <span>{time}</span>
 
             <hr />
+
+            <button onClick={showAverage}>show Average</button>
+
+            <Clock format="24h"/>
+
         </div>
     );
 }

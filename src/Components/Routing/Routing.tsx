@@ -7,10 +7,23 @@ import Page404 from "../LayoutArea/Page404/Page404";
 import ProductDetails from "../ProductsArea/ProductDetails/ProductDetails";
 import AddProduct from "../ProductsArea/AddProduct/AddProduct";
 import EditProduct from "../ProductsArea/EditProduct/EditProduct";
+import Register from "../AuthArea/Register/Register";
+import Login from "../AuthArea/Login/Login";
+import CategoryList from "../CategoriesArea/CategoryList/CategoryList";
+import CategoryDetails from "../CategoriesArea/CategoryDetails/CategoryDetails";
+import ContactUs from "../AboutArea/ContactUs/ContactUs";
 function Routing(): JSX.Element {
     return (
 
         <Routes>
+
+
+            {/*Register: */}
+            <Route path="/register" element={<Register />} />
+
+            {/*Login: */}
+            <Route path="/login" element={<Login />} />
+
 
             {/*Home Route: */}
             <Route path="/home" element={<Home />} />
@@ -20,6 +33,11 @@ function Routing(): JSX.Element {
 
             {/*about Route: */}
             <Route path="/about" element={<About />} />
+
+            
+            {/*aContact us Route: */}
+            <Route path="/contact-us" element={<ContactUs />} />
+
 
             {/*Employee Route: */}
             <Route path="/employees" element={<EmployeeList />} />
@@ -35,11 +53,19 @@ function Routing(): JSX.Element {
             {/*Edit product: */}
             <Route path="/products/edit/:prodId" element={<EditProduct />} />
 
+            {/* Categories */}
+            <Route path="/categories" element={<CategoryList />} />
+
+             {/*category details Route: */}
+             <Route path="/categories/details/:catId" element={<CategoryDetails />} />
+
 
 
             {/*Default Route: */}
             {/* <Route path="/" element={<About />} /> */}
             <Route path="/" element={<Navigate to="/home" />} />
+
+
 
             {/* Page not found */}
             <Route path="*" element={<Page404 />} />
